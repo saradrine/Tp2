@@ -14,7 +14,7 @@ namespace Tp2.Controllers
         }
         public IActionResult Index()
         {
-            var movies = _db.movies.ToList();
+            var movies = _db.movies.Include(m => m.Genre).ToList();
             return View(movies);
         }
 
